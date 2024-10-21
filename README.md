@@ -114,7 +114,7 @@ For more information about playing, like hot keys or server hosting, see the [de
 
 ### Alternative Installation Methods
 
-If you already have a Java Development Kit (JDK) installed, you may use a direct download release as an alternative to using the [launcher](https://github.com/MovingBlocks/TerasologyLauncher/releases). Java version 17 is required.
+If you already have a Java Development Kit (JDK) installed, you may use a direct download release as an alternative to using the [launcher](https://github.com/MovingBlocks/TerasologyLauncher/releases). Java version 17 or higher is required.
 
 ßDirect download stable builds are uploaded to [our release section here on GitHub](https://github.com/MovingBlocks/Terasology/releases) while the cutting-edge develop version can be downloaded direct [here from our Jenkins](https://jenkins.terasology.io/job/Terasology/job/Omega/job/develop/lastSuccessfulBuild/artifact/distros/omega/build/distributions/TerasologyOmega.zip).
 
@@ -127,7 +127,6 @@ Development is possible on all common platforms (Windows, Linux, MacOS) as long 
 
 Technical Requirements:
 - Java SE Development Kit (JDK) 17. The CI will verify against this baseline version.
-  <br>Using newer Java versions may cause issues (see [#3976](https://github.com/MovingBlocks/Terasology/issues/3976)).
 - Git to clone the repo and commit changes.
 
 Non-Technical Requirements:
@@ -136,8 +135,14 @@ Non-Technical Requirements:
 
 ### Workspace Setup
 
-To be able to run **Terasology** from source, you'll need to setup your workspace.
-Follow the [Contributor Quick Start Guide](https://terasology.org/Terasology/#/Contributor-Quick-Start).
+To be able to run **Terasology** from source, you'll need to setup your workspace. For a quick setup execute the following:
+```
+./groovyw module init iota
+./gradlew game
+
+```
+
+For more info, follow the [Contributor Quick Start Guide](https://terasology.org/Terasology/#/Contributor-Quick-Start).
 This guide is designed for [IntelliJ IDEA](https://www.jetbrains.com/idea/) (you can use the free community edition), but alternative setups are possible.
 
 > :warning: _Note, that a Terasology workspace is a **multi-repo workspace**._
@@ -147,7 +152,7 @@ While your workspace itself is a clone of [MovingBlocks/Terasology](https://gith
 Accordingly, if you want to contribute to modules, you'll need to navigate into the respective subdirectory and work with Git from in there.
 Any Git commands executed in your workspace root will target [MovingBlocks/Terasology](https://github.com/MovingBlocks/Terasology).
 
-For more information, see our wiki entry on [Understanding Terasology's Git Setup](https://terasology.org/Terasology/#/Developing-Modules?id=understanding-terasology39s-git-setup).
+See as well our wiki entry on [Understanding Terasology's Git Setup](https://terasology.org/Terasology/#/Developing-Modules?id=understanding-terasology39s-git-setup).
 
 
 ### Contributing
