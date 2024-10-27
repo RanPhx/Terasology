@@ -58,7 +58,7 @@ logger.info("PC VERSION: {}", version)
 group = "org.terasology.facades"
 
 dependencies {
-    implementation(group = "net.java.dev.jna", name = "jna-platform", version = "5.6.0")
+    implementation(libs.jna.platform)
     implementation(group = "info.picocli", name = "picocli", version = "4.5.2")
     annotationProcessor("info.picocli:picocli-codegen:4.5.2")
 
@@ -69,22 +69,22 @@ dependencies {
     // TODO: Consider whether we can move the CR dependency back here from the engine, where it is referenced from the main menu
     implementation(group = "org.terasology.crashreporter", name = "cr-terasology", version = "5.0.0")
 
-    runtimeOnly("ch.qos.logback:logback-classic:1.4.14") {
+    runtimeOnly(libs.logback) {
         because("to configure logging with logback.xml")
     }
     runtimeOnly("org.codehaus.janino:janino:3.1.7") {
         because("allows use of EvaluatorFilter in logback.xml")
     }
-    runtimeOnly("org.slf4j:jul-to-slf4j:2.0.11") {
+    runtimeOnly(libs.slf4j.jul) {
         because("redirects java.util.logging from miscellaneous dependencies through slf4j")
     }
 
     testImplementation(platform("org.junit:junit-bom:5.10.1")) {
         // junit-bom will set version numbers for the other org.junit dependencies.
     }
-    testImplementation("org.junit.jupiter:junit-jupiter-api")
-    testImplementation("org.junit.jupiter:junit-jupiter-params")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+    testImplementation(libs.junit.api)
+    testImplementation(libs.junit.params)
+    testRuntimeOnly(libs.junit.engine)
 
     testImplementation("com.google.truth:truth:1.1.2")
     testImplementation("com.google.truth.extensions:truth-java8-extension:1.1.2")
