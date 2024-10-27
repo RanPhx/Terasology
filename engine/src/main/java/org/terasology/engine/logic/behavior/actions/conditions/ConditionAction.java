@@ -127,7 +127,7 @@ public class ConditionAction extends BaseAction {
                                     break;
                                 case "!":
                                 case "!=":
-                                    passing = (Double) fieldValue == Double.parseDouble(secondValue);
+                                    passing = (Double) fieldValue != Double.parseDouble(secondValue);
                                     break;
                                 case "<=":
                                     passing = ((Number) fieldValue).doubleValue() <= Double.parseDouble(secondValue);
